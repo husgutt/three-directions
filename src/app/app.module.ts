@@ -17,6 +17,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { UserComponent } from './user/user.component';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { environment } from 'src/environments/environment';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +41,9 @@ import { UserComponent } from './user/user.component';
     BrowserModule,
     AppRoutingModule,
     NgxChartsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]

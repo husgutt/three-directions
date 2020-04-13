@@ -5,7 +5,18 @@
   <li ngbNavItem="2">
     <a ngbNavLink class="nav-link" [routerLink]="['/min-side']">Min Side</a>
   </li>
+  <li ngbNavItem="3" *ngIf="auth.user | async as user; else showLogin">
+    <a ngbNavLink class="nav-link" [routerLink]="['/min-side']">Min Side</a>
+  </li>
+  <li>
+    <ng-template #showLogin>
+      <p>Please login.</p>
+      <button (click)="login()">Login with Google</button>
+    </ng-template>
+  </li>
 </ul>
+
+
  <div class="container">
    <router-outlet></router-outlet>
  </div>
