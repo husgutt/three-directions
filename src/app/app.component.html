@@ -1,1 +1,10 @@
-<td-min-side></td-min-side>
+<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills shadow-sm p-3 mb-5 bg-white rounded" orientation="horizontal">
+    <li ngbNavItem="1">
+      <a ngbNavLink class="nav-link " [routerLink]="['/dagens-skjema']">Dagens Skjema</a>
+    </li>
+    <li ngbNavItem="2">
+      <a ngbNavLink class="nav-link" [routerLink]="['/min-side']">Min Side</a>
+    </li>
+  </ul>
+ 
+<router-outlet></router-outlet>
