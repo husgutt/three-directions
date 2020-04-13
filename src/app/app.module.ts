@@ -14,6 +14,9 @@ import { UtviklingComponent } from './min-side/utvikling/utvikling.component';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { UserComponent } from './user/user.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     ProfilComponent,
     HistorikkComponent,
     HistorikkDetaljerComponent,
-    UtviklingComponent
+    UtviklingComponent,
+    LoginComponent,
+    RegisterComponent,
+    UserComponent
   ],
   imports: [
     NgbModule,
