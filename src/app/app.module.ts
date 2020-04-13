@@ -4,10 +4,14 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { DagensSkjemaComponent } from './dagens-skjema/dagens-skjema.component';
+import { SkjemaComponent } from './dagens-skjema/skjema/skjema.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DagensSkjemaComponent,
+    SkjemaComponent
   ],
   imports: [
     NgbModule,
