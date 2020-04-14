@@ -1,22 +1,40 @@
-<ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-pills shadow-sm p-3 mb-5 bg-white rounded" orientation="horizontal">
-  <li ngbNavItem="1">
-    <a ngbNavLink class="nav-link " [routerLink]="['/dagens-skjema']">Dagens Skjema</a>
-  </li>
-  <li ngbNavItem="2">
-    <a ngbNavLink class="nav-link" [routerLink]="['/min-side']">Min Side</a>
-  </li>
-  <li ngbNavItem="3" *ngIf="auth.user | async as user; else showLogin">
-    <a ngbNavLink class="nav-link" [routerLink]="['/min-side']">Min Side</a>
-  </li>
-  <li>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" [routerLink]="['/dagens-skjema']">3Dir</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent" *ngIf="auth.user | async as user; else showLogin">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" [routerLink]="['/dagens-skjema']">Dagens Skjema<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/min-side']">Min Side</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <span> Velkommen <strong>{{ user.displayName }} </strong></span>
+        <button class="btn btn-outline-success my-2 my-sm-0" (click)='logout()'>Logg Ut</button>
+      </form>
+    </div>
+
     <ng-template #showLogin>
-      <p>Please login.</p>
-      <button (click)="login()">Login with Google</button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <div class="form-inline my-2 my-lg-0">
+          <button class="btn btn-outline-success my-2 my-sm-0" (click)='login()'>Logg Inn</button>
+        </div>
+      </div>
     </ng-template>
-  </li>
-</ul>
-
-
- <div class="container">
-   <router-outlet></router-outlet>
- </div>
+    </nav>
+    
+    <div class="container">
+      <div *ngIf="auth.user | async as user; else showLogin2"></div>
+      <ng-template #showLogin2>
+        <h3> Du er ikke logget inn</h3>
+      </ng-template>
+      <router-outlet></router-outlet>
+    </div>
+    

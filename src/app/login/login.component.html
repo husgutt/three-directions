@@ -1,32 +1,7 @@
-<!-- <div class="wrapper fadeInDown">
-  <div id="formContent"> -->
-    <!-- Tabs Titles -->
-
-    <!-- Icon -->
-    <!-- <div class="fadeIn first">
-      <img src="http://danielzawadzki.com/codepen/01/icon.svg" id="icon" alt="User Icon" />
-    </div> -->
-
-    <!-- Login Form -->
-    <!-- <form>
-      <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-      <input type="text" id="password" class="fadeIn third" name="login" placeholder="password">
-      <input type="submit" class="fadeIn fourth" value="Log In">
-    </form> -->
-
-    <!-- Remind Passowrd -->
-    <!-- <div id="formFooter">
-      <a class="underlineHover" href="#">Forgot Password?</a>
-    </div>
-
-  </div>
-</div> -->
-
-<div *ngIf="auth.user | async as user; else showLogin">
-    <h1>Hello {{ user.displayName }}!</h1>
-    <button (click)="logout()">Logout</button>
-  </div>
-  <ng-template #showLogin>
-    <p>Please login.</p>
-    <button (click)="login()">Login with Google</button>
-  </ng-template>
+<!-- <ul>
+    <li *ngFor="let item of doks">
+    </li>
+</ul> -->
+<button (click)='lagre()'>Lagre</button>
+<!-- {{ auth.user | async | json}} -->
+{{ userTest.uid | json}}
