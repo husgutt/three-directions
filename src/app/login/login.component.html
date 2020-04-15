@@ -1,7 +1,6 @@
-<!-- <ul>
-    <li *ngFor="let item of doks">
-    </li>
-</ul> -->
 <button (click)='lagre()'>Lagre</button>
-<!-- {{ auth.user | async | json}} -->
-{{ userTest.uid | json}}
+<div *ngIf='userDocObs | async as userDoc '>
+    <h1>User:</h1>
+    {{ userDoc.name }}
+</div>
+<!-- {{ userTest.uid | json}} -->

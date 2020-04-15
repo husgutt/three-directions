@@ -1,7 +1,8 @@
 <div class="shadow p-3 mb-5 bg-white rounded">
+  {{ userSkjema | async | json}}
     <ul ngbNav #nav="ngbNav" [(activeId)]="active" class="nav-tabs">
         <li [ngbNavItem]="1">
-          <a ngbNavLink>Retning 1</a>
+          <a ngbNavLink>asd</a>
           <ng-template ngbNavContent>
               <td-skjema></td-skjema>
           </ng-template>
@@ -47,4 +48,6 @@
       </div>
 
       <button type="submit" class="btn btn-primary" >Submit</button>
+
+      
 </div>
